@@ -18,7 +18,7 @@ KeyFrame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 KeyFrame.Visible = true  -- Certifique-se de que o Frame está visível
 
 -- Configuração da Key
-local storedKey = "SUA_CHAVE_AQUI"  -- Substitua pela sua chave válida
+local storedKey = "GABRIEL"  -- Substitua pela sua chave válida
 
 -- Configuração do campo de entrada de texto (Input)
 KeyInput.Name = "KeyInput"
@@ -43,7 +43,7 @@ VerifyButton.MouseButton1Click:Connect(function()
         print("Chave correta!")  -- Debug
         -- Acesso concedido, chama o hub de ESP
         KeyHub:Destroy()
-        loadstring(game:HttpGet("URL_DO_SCRIPT_DO_ESP"))() -- Substitua pela URL ou código do script ESP
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/G4briel090/Roblox-Script/refs/heads/main/ESP.lua"))() -- Substitua pela URL ou código do script ESP
     else
         print("Chave incorreta.")  -- Debug
         KeyInput.Text = ""
