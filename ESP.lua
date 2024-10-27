@@ -9,7 +9,6 @@ local function createHighlight(character)
     highlight.OutlineTransparency = 0
     highlight.DepthMode = "AlwaysOnTop"
     highlight.Adornee = character
-    end
 
     character.Destroying:Connect(function()
         highlight:Destroy()
