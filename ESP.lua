@@ -3,6 +3,8 @@ local highlightActive = true
 local UserInputService = game:GetService("UserInputService")
 
 local function createHighlight(character)
+    while true do
+        wait(1)
     local highlight = Instance.new("Highlight", container)
     highlight.FillColor = BrickColor.new(character.Parent.Name).Color
     highlight.FillTransparency = 1
@@ -12,6 +14,7 @@ local function createHighlight(character)
 
     character.Destroying:Connect(function()
         highlight:Destroy()
+    end
     end)
 
     return highlight
