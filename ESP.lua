@@ -1,6 +1,7 @@
 local container = Instance.new("Folder", gethui())
 local highlightActive = true
 local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
 
 local function createHighlight(character)
     local highlight = Instance.new("Highlight", container)
@@ -55,6 +56,20 @@ UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
         toggleHighlights()
     end
 end)
+
+local function onPlayerAdded(player)
+    player.CharacterAdded:Connect(function(character)
+        if highlightActive then
+            createHighlight(character)
+        end
+    end)
+end
+
+for _, player in ipairs(Players:GetPlayers()) do
+    onPlayerAdded(player) -- Adiciona highlight para jogadores já presentes
+end
+
+Players.PlayerAdded:Connect(onPlayerAdded) -- Monitora novos jogadores
 
 for _, team in workspace:WaitForChild("Players"):GetChildren() do
     for _, child in team:GetChildren() do
