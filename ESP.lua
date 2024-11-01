@@ -14,8 +14,8 @@ local function createHighlight(character)
 
     character.Destroying:Connect(function()
         highlight:Destroy()
-    end
     end)
+    end
 
     return highlight
 end
