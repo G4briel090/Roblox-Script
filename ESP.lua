@@ -13,7 +13,6 @@ local function createHighlight(character)
     character.Destroying:Connect(function()
         highlight:Destroy()
     end)
-    end
 
     return highlight
 end
